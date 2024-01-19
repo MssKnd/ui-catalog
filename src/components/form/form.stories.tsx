@@ -14,8 +14,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
-  render: () => <Form>
-    <Labeled.TextField label='label' />
-    <Labeled.TextField label='label' />
+  render: (_) => <Form>
+    <Labeled.TextField label='label 1' />
+    <Labeled.TextField label='label 2' />
   </Form>,
+  args: {
+    children: undefined,
+  },
 };

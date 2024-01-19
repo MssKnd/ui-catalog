@@ -5,6 +5,6 @@ type Props = {
   children: ReactNode;
 }
 
-const Form = ({children}: Props): ReactNode => <form className='form'>{children}</form>;
+const Form = ({children}: Props) => <form>{children}</form>;
 
 export { Form };
