@@ -15,7 +15,7 @@ const meta = {
 
 export default meta;
 
-// @ts-ignore
+// @ts-expect-error: StoryObj type is not compatible with Story type
 Labeled.TextField.displayName = 'Labeled.TextField';
 export const TextField: StoryObj<typeof Labeled.TextField> = {
   render: (args) => <Labeled.TextField {...args} />,

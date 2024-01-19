@@ -1,7 +1,10 @@
 import {ReactNode, useId} from "react";
 
-type Props = {
+type BaseProps = {
   label: string;
+}
+
+type Props = BaseProps & {
   /** Set any input element */
   input: (id: string) => ReactNode;
 }
@@ -9,12 +12,14 @@ type Props = {
 /** Form attached label */
 const Labeled = ({label, input}: Props) => {
   const id = useId();
-  return (<>
-    <label htmlFor={id}>{label}</label>
-    {input(id)}
-  </>)
+  return (
+    <div>
+      <label htmlFor={id}>{label}</label>
+      {input(id)}
+    </div>
+  )
 };
 
-Labeled.TextField = ({label}: Props) => <Labeled label={label} input={(id) => <input id={id} type='text' />} />
+Labeled.TextField = ({label}: BaseProps) => <Labeled label={label} input={(id) => <input id={id} type='text' />} />
 
 export { Labeled };
