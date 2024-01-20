@@ -1,24 +1,26 @@
-import type {Meta, StoryObj} from "@storybook/react";
-import {Form} from "./form.tsx";
-import {Labeled} from "../labeled/Labeled.tsx";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Form } from "./form.tsx";
+import { Labeled } from "../labeled/Labeled.tsx";
 
 const meta = {
-  title: 'Components/Forms/Form',
-  component: Form,
-  parameters: {
-    layout: 'centered',
-  },
-  tags: ['autodocs'],
+	title: "Components/Forms/Form",
+	component: Form,
+	parameters: {
+		layout: "centered",
+	},
+	tags: ["autodocs"],
 } satisfies Meta<typeof Form>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
-  render: (_) => <Form>
-    <Labeled.TextField label='label 1' />
-    <Labeled.TextField label='label 2' />
-  </Form>,
-  args: {
-    children: undefined,
-  },
+	render: (_) => (
+		<Form>
+			<Labeled.TextField label="label 1" />
+			<Labeled.TextField label="label 2" />
+		</Form>
+	),
+	args: {
+		children: undefined,
+	},
 };

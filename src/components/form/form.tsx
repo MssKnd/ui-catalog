@@ -1,10 +1,10 @@
-import {ReactNode} from "react";
-import './form.css';
+import { ReactNode } from "react";
+import "./form.css";
 
 type Props = {
-  children: ReactNode;
-}
+	children: ReactNode;
+};
 
-const Form = ({children}: Props) => <form>{children}</form>;
+const Form = ({ children }: Props) => <form>{children}</form>;
 
 export { Form };
