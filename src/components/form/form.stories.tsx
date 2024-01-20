@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Form } from "./form.tsx";
 import { Labeled } from "../labeled/Labeled.tsx";
+import { Form } from "./form.tsx";
 
 const meta = {
 	title: "Components/Forms/Form",

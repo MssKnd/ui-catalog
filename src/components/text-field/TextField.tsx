@@ -1,9 +1,9 @@
 import {
 	ChangeEventHandler,
 	FocusEventHandler,
-	forwardRef,
 	ForwardRefExoticComponent,
 	RefAttributes,
+	forwardRef,
 } from "react";
 
 type Props = {
@@ -19,8 +19,8 @@ type TextField = ForwardRefExoticComponent<
 >;
 
 const defaultProps = {
-	value: ""
-}
+	value: "",
+};
 
 /** Text field */
 const TextField: TextField = forwardRef((props = defaultProps, ref) => {
