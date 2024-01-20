@@ -19,4 +19,7 @@ export default meta;
 Labeled.TextField.displayName = 'Labeled.TextField';
 export const TextField: StoryObj<typeof Labeled.TextField> = {
   render: (args) => <Labeled.TextField {...args} />,
+  args: {
+    value: 'Text',
+  },
 };

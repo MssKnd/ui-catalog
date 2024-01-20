@@ -1,4 +1,5 @@
 import {ReactNode, useId} from "react";
+import {TextField, TextFieldProps} from "../text-field/TextField.tsx";
 
 type BaseProps = {
   label: string;
@@ -20,6 +21,6 @@ const Labeled = ({label, input}: Props) => {
   )
 };
 
-Labeled.TextField = ({label}: BaseProps) => <Labeled label={label} input={(id) => <input id={id} type='text' />} />
+Labeled.TextField = ({label, ...props}: BaseProps & TextFieldProps) => <Labeled label={label} input={(id) => <TextField id={id} {...props} />} />
 
 export { Labeled };
