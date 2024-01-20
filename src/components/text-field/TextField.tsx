@@ -8,8 +8,8 @@ import {
 
 type Props = {
 	id?: string;
-	name: string;
-	value: string;
+	name?: string;
+	value?: string;
 	onChange?: ChangeEventHandler<HTMLInputElement>;
 	onBlur?: FocusEventHandler<HTMLInputElement>;
 };
@@ -18,8 +18,12 @@ type TextField = ForwardRefExoticComponent<
 	Props & RefAttributes<HTMLInputElement>
 >;
 
+const defaultProps = {
+	value: ""
+}
+
 /** Text field */
-const TextField: TextField = forwardRef((props, ref) => {
+const TextField: TextField = forwardRef((props = defaultProps, ref) => {
 	return <input ref={ref} type="text" {...props} />;
 });
 
