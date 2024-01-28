@@ -1,7 +1,7 @@
-form {
+form:not([data-horizontal='true']) {
   display: grid;
   grid-template-rows: repeat(2, [label] max-content [input] 1fr);
-  gap: 8px;
+  gap: var(--16px);
 
   > div {
     display: grid;
@@ -9,4 +9,19 @@ form {
     grid-row: span 2;
     gap: 0;
   }
+}
+
+form[data-horizontal='true'] {
+  display: grid;
+  gap: var(--16px);
+
+  > div {
+    display: grid;
+    grid-template-columns: [label] max-content [input] 1fr;
+    gap: var(--8px);
+  }
+}
+
+footer {
+  justify-self: right
 }

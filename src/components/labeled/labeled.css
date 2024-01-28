@@ -1,3 +1,7 @@
-label[for] {
-   cursor: pointer;
+label {
+   align-self: center;
+
+   &[for] {
+      cursor: pointer;
+   }
 }
