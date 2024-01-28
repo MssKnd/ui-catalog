@@ -1,5 +1,6 @@
 import { ReactNode, useId } from "react";
 import { TextField, TextFieldProps } from "../text-field/TextField.tsx";
+import "./labeled.css";
 
 type BaseProps = {
 	label: string;
