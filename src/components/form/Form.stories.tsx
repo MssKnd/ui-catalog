@@ -10,13 +10,16 @@ const meta = {
 		layout: "centered",
 	},
 	tags: ["autodocs"],
+	args: {
+		onSubmit: (event) => event.preventDefault(),
+	}
 } satisfies Meta<typeof Form>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
-	render: (_) => (
-		<Form>
+	render: (args) => (
+		<Form {...args}>
 			<Labeled.TextField label="label 1" />
 			<Labeled.TextField label="label 2" />
 			<Form.Footer><Button.Submit label="Submit"/></Form.Footer>
@@ -28,14 +31,15 @@ export const Default: Story = {
 };
 
 export const Horizontal: Story = {
-	render: (_) => (
-		<Form horizontal>
+	render: (args) => (
+		<Form {...args}>
 			<Labeled.TextField label="label 1" />
 			<Labeled.TextField label="label 2" />
 			<Form.Footer><Button.Submit label="Submit"/></Form.Footer>
 		</Form>
 	),
 	args: {
+		horizontal: true,
 		children: undefined,
 	},
 };
