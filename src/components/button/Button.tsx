@@ -1,41 +1,44 @@
 import "./button.css";
 
-interface ButtonProps {
-	/** Is this the principal call to action on the page? */
-	primary?: boolean;
-	/** What background color to use */
-	backgroundColor?: string;
-	/** How large should the button be? */
-	size?: "small" | "medium" | "large";
+type Props = {
 	/** Button contents */
 	label: string;
+	priority?: "primary" | "normal" | "error";
+	/** How large should the button be? */
+	size?: "s" | "m" | "l";
 	/** Optional click handler */
 	onClick?: () => void;
+	type?: "button" | "submit" | "reset";
+	disabled?: boolean;
+	autoFocus?: boolean;
 }
 
-/** Primary UI component for user interaction */
-const Button = ({
-	primary = false,
-	size = "medium",
-	backgroundColor,
+const BaseButton = ({
 	label,
+	size = "m",
+	type = 'button',
+	priority = "normal",
 	...props
-}: ButtonProps) => {
-	const mode = primary
-		? "storybook-button--primary"
-		: "storybook-button--secondary";
-	return (
-		<button
-			type="button"
-			className={["storybook-button", `storybook-button--${size}`, mode].join(
-				" ",
-			)}
-			style={{ backgroundColor }}
-			{...props}
-		>
-			{label}
-		</button>
-	);
-};
+}: Props) => (
+	<button
+		{...props}
+		data-priority={priority}
+		data-size={size}
+	>
+		{label}
+	</button>
+);
+
+const Button = ({
+	...props
+}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} />);
+
+Button.Primary = ({
+	...props
+}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} priority="primary" />);
+
+Button.Submit = ({
+	...props
+}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} priority="primary" type="submit" />);
 
 export { Button };
