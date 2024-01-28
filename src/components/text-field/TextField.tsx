@@ -5,6 +5,7 @@ import {
 	RefAttributes,
 	forwardRef,
 } from "react";
+import "./text-field.css";
 
 type Props = {
 	id?: string;

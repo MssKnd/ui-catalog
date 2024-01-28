@@ -1,0 +1,49 @@
+:root {
+
+  /* Base unit */
+  --2px: 0.125rem;
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --12px: 0.75rem;
+  --16px: 1rem;
+  --24px: 1.5rem;
+  --32px: 2rem;
+  --48px: 3rem;
+  --64px: 4rem;
+
+  /* Spacing */
+  --spacing-1: var(--2px);
+  --spacing-2: var(--4px);
+  --spacing-3: var(--8px);
+  --spacing-4: var(--12px);
+  --spacing-5: var(--16px);
+  --spacing-6: var(--24px);
+  --spacing-7: var(--32px);
+  --spacing-8: var(--48px);
+  --spacing-9: var(--64px);
+
+  /* Border radius */
+  --border-radius-s: var(--2px);
+  --border-radius-m: var(--4px);
+
+  /* Colors */
+  /* Primary Colors */
+  --color-primary-1: #f0f7ff;
+  --color-primary-2: #cadefa;
+  --color-primary-3: #4673d4;
+  --color-primary-4: #2352c8;
+  --color-primary-5: #1337a1;
+  --color-primary-6: #0c2a7a;
+
+  /* Error Colors */
+  --color-error-1: #ffebe6;
+  --color-error-2: #ffc3be;
+  --color-error-3: #dc5a5a;
+  --color-error-4: #dc3c37;
+  --color-error-5: #b93232;
+  --color-error-6: #a12c2c;
+
+  /* Shadows */
+  --shadow-hover-forms: 0 0 0 2px var(--color-primary-3);
+  --shadow-hover-forms-error: 0 0 0 2px var(--color-error-3);
+}
