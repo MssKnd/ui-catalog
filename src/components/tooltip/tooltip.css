@@ -1,0 +1,20 @@
+div:has(>[role=tooltip]) {
+  position: relative;
+  &:hover {
+    [role=tooltip] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+[role=tooltip] {
+  position: absolute;
+  padding: 4px 8px;
+  color: white;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity .3s ease-out;
+  pointer-events: none;
+}
