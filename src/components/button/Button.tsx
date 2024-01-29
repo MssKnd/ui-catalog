@@ -11,34 +11,30 @@ type Props = {
 	type?: "button" | "submit" | "reset";
 	disabled?: boolean;
 	autoFocus?: boolean;
-}
+};
 
 const BaseButton = ({
 	label,
 	size = "m",
-	type = 'button',
+	type = "button",
 	priority = "normal",
 	...props
 }: Props) => (
-	<button
-		{...props}
-		data-priority={priority}
-		data-size={size}
-	>
+	<button {...props} data-priority={priority} data-size={size}>
 		{label}
 	</button>
 );
 
-const Button = ({
-	...props
-}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} />);
+const Button = ({ ...props }: Omit<Props, "priority" | "submit">) => (
+	<BaseButton {...props} />
+);
 
-Button.Primary = ({
-	...props
-}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} priority="primary" />);
+Button.Primary = ({ ...props }: Omit<Props, "priority" | "submit">) => (
+	<BaseButton {...props} priority="primary" />
+);
 
-Button.Submit = ({
-	...props
-}: Omit<Props, "priority" | "submit">) => (<BaseButton {...props} priority="primary" type="submit" />);
+Button.Submit = ({ ...props }: Omit<Props, "priority" | "submit">) => (
+	<BaseButton {...props} priority="primary" type="submit" />
+);
 
 export { Button };

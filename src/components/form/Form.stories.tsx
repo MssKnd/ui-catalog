@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Labeled } from "../labeled/Labeled.tsx";
 import { Form } from "./Form.tsx";
-import {Button} from "../button/Button.tsx";
+import { Button } from "../button/Button.tsx";
 
 const meta = {
 	title: "Components/Forms/Form",
@@ -12,7 +12,7 @@ const meta = {
 	tags: ["autodocs"],
 	args: {
 		onSubmit: (event) => event.preventDefault(),
-	}
+	},
 } satisfies Meta<typeof Form>;
 
 export default meta;
@@ -22,7 +22,9 @@ export const Default: Story = {
 		<Form {...args}>
 			<Labeled.TextField label="label 1" />
 			<Labeled.TextField label="label 2" />
-			<Form.Footer><Button.Submit label="Submit"/></Form.Footer>
+			<Form.Footer>
+				<Button.Submit label="Submit" />
+			</Form.Footer>
 		</Form>
 	),
 	args: {
@@ -35,7 +37,9 @@ export const Horizontal: Story = {
 		<Form {...args}>
 			<Labeled.TextField label="label 1" />
 			<Labeled.TextField label="label 2" />
-			<Form.Footer><Button.Submit label="Submit"/></Form.Footer>
+			<Form.Footer>
+				<Button.Submit label="Submit" />
+			</Form.Footer>
 		</Form>
 	),
 	args: {

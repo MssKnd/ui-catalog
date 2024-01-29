@@ -1,4 +1,4 @@
-import {FormEventHandler, ReactNode} from "react";
+import { FormEventHandler, ReactNode } from "react";
 import "./form.css";
 
 type Props = {
@@ -7,8 +7,11 @@ type Props = {
 	children: ReactNode;
 };
 
-const Form = ({ onSubmit, horizontal = undefined, children }: Props) =>
-	<form onSubmit={onSubmit} data-horizontal={horizontal}>{children}</form>;
+const Form = ({ onSubmit, horizontal = undefined, children }: Props) => (
+	<form onSubmit={onSubmit} data-horizontal={horizontal}>
+		{children}
+	</form>
+);
 
 Form.Footer = ({ children }: Props) => <footer>{children}</footer>;
 

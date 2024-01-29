@@ -3,7 +3,7 @@ import {
 	FocusEventHandler,
 	ForwardRefExoticComponent,
 	RefAttributes,
-	forwardRef
+	forwardRef,
 } from "react";
 import "./text-field.css";
 
@@ -28,7 +28,9 @@ type TextField = ForwardRefExoticComponent<
 >;
 
 /** Text field */
-const TextField: TextField = forwardRef(({value = "", ...props}, ref) => <input ref={ref} type="text" {...props} defaultValue={value} />);
+const TextField: TextField = forwardRef(({ value = "", ...props }, ref) => (
+	<input ref={ref} type="text" {...props} defaultValue={value} />
+));
 
 export type { Props as TextFieldProps };
 export { TextField };
