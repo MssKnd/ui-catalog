@@ -3,7 +3,7 @@ import {
 	FocusEventHandler,
 	ForwardRefExoticComponent,
 	RefAttributes,
-	forwardRef,
+	forwardRef
 } from "react";
 import "./text-field.css";
 
@@ -13,20 +13,22 @@ type Props = {
 	value?: string;
 	onChange?: ChangeEventHandler<HTMLInputElement>;
 	onBlur?: FocusEventHandler<HTMLInputElement>;
+	placeholder?: string;
+	disabled?: boolean;
+	autoFocus?: boolean;
+	readonly?: boolean;
+	required?: boolean;
+	pattern?: string;
+	minLength?: number;
+	maxLength?: number;
 };
 
 type TextField = ForwardRefExoticComponent<
 	Props & RefAttributes<HTMLInputElement>
 >;
 
-const defaultProps = {
-	value: "",
-};
-
 /** Text field */
-const TextField: TextField = forwardRef((props = defaultProps, ref) => {
-	return <input ref={ref} type="text" {...props} />;
-});
+const TextField: TextField = forwardRef(({value = "", ...props}, ref) => <input ref={ref} type="text" {...props} defaultValue={value} />);
 
 export type { Props as TextFieldProps };
 export { TextField };
