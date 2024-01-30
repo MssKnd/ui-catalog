@@ -1,0 +1,6 @@
+p[role="alert"] {
+  padding: var(--spacing-2) var(--spacing-3);
+  text-wrap: nowrap;
+  margin: 0;
+  background-color: var(--color-error-3);
+}

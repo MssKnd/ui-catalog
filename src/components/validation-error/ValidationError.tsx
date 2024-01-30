@@ -1,5 +1,7 @@
 import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { TextField } from "../text-field";
+import { Tooltip } from "../tooltip";
+import "./validation-error.css";
 
 type ValidationErrorHandlerProps<T extends HTMLInputElement> = {
 	input: (ref: RefObject<T>) => ReactNode;
@@ -27,10 +29,14 @@ const ValidationError = <T extends HTMLInputElement>({
 	}, [input]);
 
 	return (
-		<div>
+		<Tooltip
+			position="right"
+			content={
+				validationMessage ? <p role="alert">{validationMessage}</p> : undefined
+			}
+		>
 			{Input}
-			{inputRef.current && <p role="alert">{validationMessage}</p>}
-		</div>
+		</Tooltip>
 	);
 };
 

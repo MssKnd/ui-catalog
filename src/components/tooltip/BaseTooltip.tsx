@@ -44,9 +44,7 @@ const BaseTooltip: BaseTooltip = forwardRef(
 		ref,
 	) => {
 		const id = useId();
-
-		if (!content || (typeof content === "object" && isEmpty(content)))
-			return <>{children}</>;
+		const isTextNode = typeof content === "string";
 
 		return (
 			<div
@@ -58,7 +56,12 @@ const BaseTooltip: BaseTooltip = forwardRef(
 				aria-describedby={id}
 			>
 				{children}
-				<div id={id} role="tooltip" aria-hidden={!isVisible}>
+				<div
+					id={id}
+					role="tooltip"
+					aria-hidden={!isVisible}
+					data-is-text={isTextNode}
+				>
 					{content}
 				</div>
 			</div>
