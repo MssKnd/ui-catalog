@@ -1,4 +1,6 @@
 :root {
+  /* Font */
+  --font-bold: 700;
 
   /* Base unit */
   --2px: 0.125rem;
