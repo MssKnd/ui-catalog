@@ -12,8 +12,8 @@ const meta = {
 	},
 	tags: ["autodocs"],
 	argTypes: {
-		onBlur: { control: "none" },
-		onChange: { control: "none" },
+		onBlur: { control: false },
+		onChange: { control: false },
 	},
 } satisfies Meta<Props>;
 
