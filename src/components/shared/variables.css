@@ -35,6 +35,14 @@
   --color-primary-5: #1337a1;
   --color-primary-6: #0c2a7a;
 
+  /* Natural Colors */
+  --color-natural-1: #f7f7f7;
+  --color-natural-2: #e0e0e0;
+  --color-natural-3: #a6a6a6;
+  --color-natural-4: #737373;
+  --color-natural-5: #4d4d4d;
+  --color-natural-6: #333333;
+
   /* Error Colors */
   --color-error-1: #ffebe6;
   --color-error-2: #ffc3be;
