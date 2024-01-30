@@ -13,7 +13,25 @@ button {
 
   &[data-priority='primary'] {
     color: white;
-    background-color: #1ea7fd;
+    background-color: var(--color-primary-4);
+    &:hover, &:focus {
+      background-color: var(--color-primary-3);
+    }
+  }
+
+  &[data-priority='normal'] {
+    background-color: var(--color-natural-1);
+    &:hover, &:focus {
+      background-color: var(--color-natural-2);
+    }
+  }
+
+  &[data-priority='danger'] {
+    color: white;
+    background-color: var(--color-error-4);
+    &:hover, &:focus {
+      background-color: var(--color-error-3);
+    }
   }
 
   &[data-size='s'] {

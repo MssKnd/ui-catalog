@@ -3,7 +3,7 @@ import "./button.css";
 type Props = {
 	/** Button contents */
 	label: string;
-	priority?: "primary" | "normal" | "error";
+	priority?: "primary" | "normal" | "danger";
 	/** How large should the button be? */
 	size?: "s" | "m" | "l";
 	/** Optional click handler */
@@ -31,6 +31,10 @@ const Button = ({ ...props }: Omit<Props, "priority" | "submit">) => (
 
 Button.Primary = ({ ...props }: Omit<Props, "priority" | "submit">) => (
 	<BaseButton {...props} priority="primary" />
+);
+
+Button.Danger = ({ ...props }: Omit<Props, "priority" | "submit">) => (
+	<BaseButton {...props} priority="danger" />
 );
 
 Button.Submit = ({ ...props }: Omit<Props, "priority" | "submit">) => (

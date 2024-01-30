@@ -31,6 +31,13 @@ export const Normal: Story = {
 	},
 };
 
+export const Danger: Story = {
+	render: (args) => <Button.Danger {...args} />,
+	args: {
+		label: "Button",
+	},
+};
+
 export const Large: Story = {
 	args: {
 		size: "l",
