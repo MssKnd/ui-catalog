@@ -13,6 +13,16 @@ const ModalContext = createContext<{
 	closeModal: () => {},
 });
 
+const clickOverlay = (event: MouseEvent) => {
+	if (!isDialogElement(event.target)) return;
+	event.target.close();
+};
+
+const isDialogElement = (element: unknown): element is HTMLDialogElement =>
+	element !== null &&
+	element instanceof HTMLElement &&
+	element.nodeName === "DIALOG";
+
 const ModalProvider = ({ children }: { children: ReactNode }) => {
 	const ref = useRef<HTMLDialogElement>(null);
 	const [Content, setContent] = useState<ReactNode>(null);
@@ -24,10 +34,13 @@ const ModalProvider = ({ children }: { children: ReactNode }) => {
 		setType(type);
 		ref.current?.showModal();
 		setIsModalOpen(true);
+		if (type !== "confirm") return;
+		document.addEventListener("click", clickOverlay);
 	};
 	const closeModal = () => {
 		ref.current?.close();
 		setIsModalOpen(false);
+		document.removeEventListener("click", clickOverlay);
 	};
 
 	return (

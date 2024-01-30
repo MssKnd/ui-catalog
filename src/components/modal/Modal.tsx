@@ -40,7 +40,7 @@ const footerByType = (closeModal: () => void, id?: string) =>
 				<Button.Danger label="Danger" onClick={closeModal} />
 			</>
 		),
-		confirm: <Button label="Close" onClick={closeModal} />,
+		confirm: <Button label="Confirm" onClick={closeModal} />,
 		submit: (
 			<>
 				<Button label="Cancel" onClick={closeModal} />
