@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tooltip } from ".";
+import { InteractiveTooltip } from ".";
 
 const meta = {
-	title: "Components/Tooltip/Tooltip",
-	component: Tooltip,
+	title: "Components/Tooltip/InteractiveTooltip",
+	component: InteractiveTooltip,
 	parameters: {
 		layout: "centered",
 	},
@@ -14,7 +14,7 @@ const meta = {
 			options: ["top", "right"],
 		},
 	},
-} satisfies Meta<typeof Tooltip>;
+} satisfies Meta<typeof InteractiveTooltip>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
