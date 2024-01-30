@@ -1,8 +1,6 @@
 import { ReactNode, useContext } from "react";
 import { ModalContext } from "./ModalProvider.tsx";
-import "./modal.css";
-
-type ModalType = "dialog" | "alert" | "confirm" | "submit";
+import { ModalType } from "./Modal.tsx";
 
 type Props<T> = {
 	content: (props: T) => ReactNode;
@@ -17,7 +15,7 @@ const useModal = <T,>({ content, type }: Props<T>) => {
 	} = useContext(ModalContext);
 
 	const openModal = (props: T) => () => {
-		contextOpenModal(content(props));
+		contextOpenModal(content(props), type);
 	};
 
 	return { openModal, closeModal, isModalOpen };

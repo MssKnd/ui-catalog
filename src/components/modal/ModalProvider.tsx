@@ -1,11 +1,11 @@
-import { ReactNode, createContext, useCallback, useState } from "react";
+import { ReactNode, createContext, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import "./modal.css";
-import { ModalHOC } from "./ModalHOC.tsx";
+import { Modal, ModalType } from "./Modal.tsx";
 
 const ModalContext = createContext<{
 	isModalOpen: boolean;
-	openModal: (Content: ReactNode) => void;
+	openModal: (Content: ReactNode, type: ModalType) => void;
 	closeModal: () => void;
 }>({
 	isModalOpen: false,
@@ -14,26 +14,35 @@ const ModalContext = createContext<{
 });
 
 const ModalProvider = ({ children }: { children: ReactNode }) => {
+	const ref = useRef<HTMLDialogElement>(null);
 	const [Content, setContent] = useState<ReactNode>(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [type, setType] = useState<ModalType>("dialog");
 
-	const openModal = useCallback((ModalBody: ReactNode) => {
+	const openModal = (ModalBody: ReactNode, type: ModalType) => {
 		setContent(ModalBody);
+		setType(type);
+		ref.current?.showModal();
 		setIsModalOpen(true);
-	}, []);
-	const closeModal = useCallback(() => setIsModalOpen(false), []);
-
-	const ModalDialog = ModalHOC({
-		title: "Modal",
-		modalBody: Content,
-		isModalOpen,
-		closeModal,
-	});
+	};
+	const closeModal = () => {
+		ref.current?.close();
+		setIsModalOpen(false);
+	};
 
 	return (
 		<ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>
 			{children}
-			{createPortal(<ModalDialog />, document.body)}
+			{createPortal(
+				<Modal
+					ref={ref}
+					title="Modal"
+					type={type}
+					closeModal={closeModal}
+					modalBody={Content}
+				/>,
+				document.body,
+			)}
 		</ModalContext.Provider>
 	);
 };

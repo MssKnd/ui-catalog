@@ -4,6 +4,7 @@ import { Form } from "../form";
 import { Labeled } from "../labeled/Labeled.tsx";
 import { ModalProvider } from "./ModalProvider.tsx";
 import { useModal } from "./useModal.tsx";
+import { ModalType } from "./Modal.tsx";
 
 const ModalContent = ({ label }: { label: string }) => (
 	<Form>
@@ -12,10 +13,10 @@ const ModalContent = ({ label }: { label: string }) => (
 	</Form>
 );
 
-const Demo = () => {
-	const { openModal } = useModal({ content: ModalContent, type: "submit" });
+const Demo = ({ type }: { type: ModalType }) => {
+	const { openModal } = useModal({ content: ModalContent, type });
 
-	return <Button onClick={openModal({ label: "test" })} label="Open modal" />;
+	return <Button onClick={openModal({ label: "test" })} label="Modal Open" />;
 };
 
 const meta = {
@@ -32,7 +33,15 @@ const meta = {
 		),
 	],
 	tags: ["autodocs"],
-	args: {},
+	args: {
+		type: "submit",
+	},
+	argTypes: {
+		type: {
+			control: { type: "select" },
+			options: ["dialog", "danger", "confirm", "submit"],
+		},
+	},
 } satisfies Meta<typeof useModal>;
 
 export default meta;
