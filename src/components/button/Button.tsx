@@ -9,6 +9,7 @@ type Props = {
 	/** Optional click handler */
 	onClick?: () => void;
 	type?: "button" | "submit" | "reset";
+	form?: string;
 	disabled?: boolean;
 	autoFocus?: boolean;
 };

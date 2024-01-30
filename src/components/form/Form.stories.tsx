@@ -16,6 +16,9 @@ const meta = {
 } satisfies Meta<typeof Form>;
 
 export default meta;
+
+// @ts-expect-error: StoryObj type is not compatible with Story type
+Form.Footer.displayName = "Form.Footer";
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	render: (args) => (
