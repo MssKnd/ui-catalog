@@ -8,6 +8,10 @@ form:not([data-horizontal='true']) {
     grid-template-rows: subgrid;
     grid-row: span 2;
     gap: 0;
+
+    label {
+      font-size: var(--font-size-s);
+    }
   }
 }
 
