@@ -4,4 +4,11 @@ label {
    &[for] {
       cursor: pointer;
    }
+
+   &:has(+Input[required], +Select[required], +Textarea[required]) {
+      &::after {
+         content: '*';
+         color: var(--color-error-3);
+      }
+   }
 }
