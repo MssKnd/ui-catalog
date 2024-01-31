@@ -6,8 +6,4 @@ input {
   &:hover {
     box-shadow: var(--shadow-hover-forms);
   }
-
-  &:invalid {
-    box-shadow: var(--shadow-hover-forms-error);
-  }
 }

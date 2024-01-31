@@ -2,6 +2,10 @@
   /* Font */
   --font-bold: 700;
 
+  --font-size-s: 0.75rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+
   /* Base unit */
   --2px: 0.125rem;
   --4px: 0.25rem;
@@ -52,6 +56,14 @@
   --color-error-4: #dc3c37;
   --color-error-5: #b93232;
   --color-error-6: #a12c2c;
+
+  /* Success Colors */
+  --color-success-1: #e6f4e6;
+  --color-success-2: #c3e3c3;
+  --color-success-3: #5adc5a;
+  --color-success-4: #3cdc3c;
+  --color-success-5: #32b932;
+  --color-success-6: #2ca12c;
 
   /* Shadows */
   --shadow-hover-forms: 0 0 0 2px var(--color-primary-3);

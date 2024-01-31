@@ -1,0 +1,33 @@
+p[role="alert"] {
+  font-size: var(--font-size-s);
+  color: var(--color-natural-1);
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--color-error-3);
+  border-radius: var(--border-radius-m);
+  display: grid;
+  gap: var(--spacing-3);
+  grid-template-columns: min-content 1fr;
+
+  > svg {
+    align-self: baseline;
+  }
+
+  > span {
+    overflow-wrap: break-word;
+    inline-size: max-content;
+  }
+}
+
+div:has(input+[role=tooltip]>p[role="alert"]) {
+  > input:user-invalid {
+    box-shadow: var(--shadow-hover-forms-error);
+  }
+}
+
+div:has(input+[role=tooltip]) {
+  [role=tooltip] > div[data-valid=true] {
+    display: grid;
+    color: var(--color-success-5);
+  }
+}
+

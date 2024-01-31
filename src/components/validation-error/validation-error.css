@@ -1,7 +1,0 @@
-p[role="alert"] {
-  text-wrap: nowrap;
-  color: var(--color-natural-1);
-  padding: var(--spacing-2) var(--spacing-4);
-  background-color: var(--color-error-3);
-  border-radius: var(--border-radius-m);
-}
