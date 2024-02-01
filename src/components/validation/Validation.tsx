@@ -2,6 +2,8 @@ import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { Icon } from "../icon";
 import { TextField } from "../text-field";
 import { Tooltip } from "../tooltip";
+import { Text } from "../text/Text.tsx";
+import { cn } from "../shared/utils.ts";
 import { GOLDEN_RATIO } from "../shared/constants.ts";
 import "./validation.css";
 
@@ -68,15 +70,17 @@ const checkState = (state: boolean | undefined) => {
 const validationResultMap = {
 	Unvalidated: () => <></>,
 	valid: () => (
-		<div data-valid={true}>
+		<div className={cn("valid")}>
 			<Icon.Check />
 		</div>
 	),
 	invalid: (maxWidth: string, message: string) => (
-		<p role="alert" data-valid={false} style={{ maxWidth }}>
+		<div role="alert">
 			<Icon.Error />
-			<span>{message}</span>
-		</p>
+			<Text fontSize="s" maxWidth={maxWidth}>
+				{message}
+			</Text>
+		</div>
 	),
 };
 

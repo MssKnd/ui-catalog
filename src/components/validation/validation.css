@@ -1,6 +1,5 @@
-@scope (div:has(input+[role=tooltip]>p[role="alert"])) {
-  p[role="alert"] {
-    font-size: var(--font-size-s);
+@scope (div:has(input+[role=tooltip]>[role="alert"])) {
+  [role="alert"] {
     color: var(--color-natural-1);
     padding: var(--spacing-2) var(--spacing-3);
     background-color: var(--color-error-3);
@@ -8,8 +7,8 @@
     display: grid;
     gap: var(--spacing-3);
     grid-template-columns: min-content 1fr;
-    overflow-wrap: break-word;
-    inline-size: max-content;
+    /*overflow-wrap: break-word;*/
+    /*inline-size: max-content;*/
 
     > svg {
       align-self: baseline;
@@ -22,7 +21,7 @@
 }
 
 div:has(input+[role=tooltip]) {
-  [role=tooltip] > div[data-valid=true] {
+  [role=tooltip] > div.valid {
     display: grid;
     color: var(--color-success-5);
   }
