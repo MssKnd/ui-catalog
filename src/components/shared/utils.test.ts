@@ -69,6 +69,10 @@ describe("camel2KebabCase", () => {
 });
 
 describe("classNames", () => {
+	test("returns an empty string when no arguments are passed", () => {
+		expect(cn()).toBe("");
+	});
+
 	test("returns a string of class names", () => {
 		expect(
 			cn("default_1 default_2", {
@@ -82,6 +86,7 @@ describe("classNames", () => {
 			}),
 		).toBe("default_1 default_2 a_1 b_2 d e_0 camel-case-1 camel-case-2_0");
 	});
+
 	test("returns a string of class names without duplication", () => {
 		expect(cn("default_1 default_1", { default: 1 })).toBe("default_1");
 	});

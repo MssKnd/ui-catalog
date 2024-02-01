@@ -26,7 +26,7 @@ type Prop = Record<string, PropType>;
  * @param defaultClassName expected space separated class names ex: "text red bg-white"
  * @param props object of props ex: { text: true, bg: "white" }
  **/
-const cn = (defaultClassName = "", props: Prop) => {
+const cn = (defaultClassName = "", props: Prop = {}) => {
 	const defaultClassNames = defaultClassName.split(" ");
 	const classNames = Object.entries(props).flatMap(convertClassName);
 	return Array.from(new Set([...defaultClassNames, ...classNames])).join(" ");
