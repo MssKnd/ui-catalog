@@ -7,8 +7,6 @@
     display: grid;
     gap: var(--spacing-3);
     grid-template-columns: min-content 1fr;
-    /*overflow-wrap: break-word;*/
-    /*inline-size: max-content;*/
 
     > svg {
       align-self: baseline;
@@ -24,5 +22,11 @@ div:has(input+[role=tooltip]) {
   [role=tooltip] > div.valid {
     display: grid;
     color: var(--color-success-5);
+  }
+}
+
+@scope (body.dark div:has(input+[role=tooltip]>[role="alert"])) {
+  [role="alert"] {
+    color: var(--font-color);
   }
 }

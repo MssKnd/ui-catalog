@@ -55,3 +55,12 @@
     padding: var(--12px) var(--24px);
   }
 }
+
+@scope (button) {
+  :scope[data-priority='normal'] {
+    background-color: var(--color-natural-2);
+    &:hover:not(&:disabled), &:focus {
+      background-color: var(--color-natural-3);
+    }
+  }
+}
