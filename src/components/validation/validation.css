@@ -8,14 +8,11 @@
     display: grid;
     gap: var(--spacing-3);
     grid-template-columns: min-content 1fr;
+    overflow-wrap: break-word;
+    inline-size: max-content;
 
     > svg {
       align-self: baseline;
-    }
-
-    > span {
-      overflow-wrap: break-word;
-      inline-size: max-content;
     }
   }
 

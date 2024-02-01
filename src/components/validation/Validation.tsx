@@ -73,9 +73,9 @@ const validationResultMap = {
 		</div>
 	),
 	invalid: (maxWidth: string, message: string) => (
-		<p role="alert" data-valid={false}>
+		<p role="alert" data-valid={false} style={{ maxWidth }}>
 			<Icon.Error />
-			<span style={{ maxWidth }}>{message}</span>
+			<span>{message}</span>
 		</p>
 	),
 };
