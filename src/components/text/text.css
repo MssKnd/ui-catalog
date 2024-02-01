@@ -1,12 +1,14 @@
 @scope (p.text) {
   & {
-    font-size: var(--font-size-m);
     overflow-wrap: break-word;
     inline-size: max-content;
   }
 
   &.font-size_s {
     font-size: var(--font-size-s);
+  }
+  &.font-size_m {
+    font-size: var(--font-size-m);
   }
   &.font-size_l {
     font-size: var(--font-size-l);
