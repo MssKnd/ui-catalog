@@ -1,0 +1,11 @@
+@scope (body.light) {
+  .docs-story {
+    background-color: #fff;
+  }
+}
+
+@scope (body.dark) {
+  .docs-story {
+    background-color: #121212;
+  }
+}
