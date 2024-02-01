@@ -24,8 +24,6 @@ type BaseProps = {
 	hideTooltip?: () => void;
 };
 
-const isEmpty = (obj: object) => Object.keys(obj).length === 0;
-
 type BaseTooltip = ForwardRefExoticComponent<
 	Props & BaseProps & RefAttributes<HTMLDivElement>
 >;
@@ -93,4 +91,4 @@ const POS = {
 } as const;
 
 export type { Position, Props as TooltipProps };
-export { BaseTooltip, positionCalc, isEmpty };
+export { BaseTooltip, positionCalc };

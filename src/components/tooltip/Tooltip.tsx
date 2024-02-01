@@ -1,11 +1,7 @@
 import { useRef, useEffect } from "react";
+import { isEmpty } from "../shared/utils.ts";
+import { BaseTooltip, positionCalc, TooltipProps } from "./BaseTooltip.tsx";
 import "./tooltip.css";
-import {
-	BaseTooltip,
-	isEmpty,
-	positionCalc,
-	TooltipProps,
-} from "./BaseTooltip.tsx";
 
 const Tooltip = ({ children, content, position = "top" }: TooltipProps) => {
 	const ref = useRef<HTMLDivElement>(null);
