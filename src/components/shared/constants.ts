@@ -1,0 +1,3 @@
+const GOLDEN_RATIO = 1.61803398875;
+
+export { GOLDEN_RATIO };

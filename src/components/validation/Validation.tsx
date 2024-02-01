@@ -2,6 +2,7 @@ import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
 import { Icon } from "../icon";
 import { TextField } from "../text-field";
 import { Tooltip } from "../tooltip";
+import { GOLDEN_RATIO } from "../shared/constants.ts";
 import "./validation.css";
 
 type ValidationProps<T extends HTMLInputElement> = {
@@ -25,7 +26,7 @@ const Validation = <T extends HTMLInputElement>({
 	const Input = input(inputRef);
 	const maxWidth =
 		Math.round(
-			(inputRef.current?.getBoundingClientRect().width || 300) * 1.25,
+			(inputRef.current?.getBoundingClientRect().width || 300) * GOLDEN_RATIO,
 		) + "px";
 
 	useEffect(() => {
