@@ -12,17 +12,22 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
   &[data-priority='primary'] {
     color: white;
     background-color: var(--color-primary-4);
-    &:hover, &:focus {
+    &:hover:not(&:disabled), &:focus {
       background-color: var(--color-primary-3);
     }
   }
 
   &[data-priority='normal'] {
     background-color: var(--color-natural-1);
-    &:hover, &:focus {
+    &:hover:not(&:disabled), &:focus {
       background-color: var(--color-natural-2);
     }
   }
@@ -30,7 +35,7 @@
   &[data-priority='danger'] {
     color: white;
     background-color: var(--color-error-4);
-    &:hover, &:focus {
+    &:hover:not(&:disabled), &:focus {
       background-color: var(--color-error-3);
     }
   }
