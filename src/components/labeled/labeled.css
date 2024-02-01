@@ -1,14 +1,16 @@
-label {
-   align-self: center;
+@scope (.labeled-form) {
+   label {
+      align-self: center;
 
-   &[for] {
-      cursor: pointer;
-   }
+      &[for] {
+         cursor: pointer;
+      }
 
-   &:has(+Input[required], +Select[required], +Textarea[required]) {
-      &::after {
-         content: '*';
-         color: var(--color-error-3);
+      &:has(+Input[required], +Select[required], +Textarea[required]) {
+         &::after {
+            content: '*';
+            color: var(--color-error-3);
+         }
       }
    }
 }

@@ -1,20 +1,23 @@
-div:has(>[role=tooltip]) {
-  position: relative;
-  [role=tooltip][aria-hidden=false] {
-    opacity: 1;
-    pointer-events: auto;
+@scope (div:has(>[role=tooltip])) {
+  & {
+    position: relative;
+    [role=tooltip][aria-hidden=false] {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
-}
 
-[role=tooltip] {
-  position: absolute;
-  opacity: 0;
-  transition: opacity .3s ease-out;
-  pointer-events: none;
-  &[data-is-text=true] {
-    padding: 4px 8px;
-    color: white;
-    border-radius: 2px;
-    background-color: rgba(0, 0, 0, 0.8);
+  [role=tooltip] {
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+    pointer-events: none;
+
+    &[data-is-text=true] {
+      padding: 4px 8px;
+      color: white;
+      border-radius: 2px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   }
 }

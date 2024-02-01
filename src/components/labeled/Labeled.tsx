@@ -15,7 +15,7 @@ type Props = BaseProps & {
 const Labeled = ({ label, input }: Props) => {
 	const id = useId();
 	return (
-		<div>
+		<div className="labeled-form">
 			<label htmlFor={id}>{label}</label>
 			{input(id)}
 		</div>

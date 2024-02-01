@@ -1,14 +1,16 @@
-button {
-  font-weight: var(--font-bold);
-  border: 0;
-  border-radius: var(--border-radius-m);
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+@scope (button) {
+  & {
+    font-weight: var(--font-bold);
+    border: 0;
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
 
-  color: var(--color-natural-6);
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    color: var(--color-natural-6);
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+  }
 
   &[data-priority='primary'] {
     color: white;
@@ -37,10 +39,12 @@ button {
     font-size: var(--12px);
     padding: var(--4px) var(--12px);
   }
+
   &[data-size='m'] {
     font-size: var(--16px);
     padding: var(--8px) var(--16px);
   }
+
   &[data-size='l'] {
     font-size: var(--24px);
     padding: var(--12px) var(--24px);
