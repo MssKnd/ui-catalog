@@ -70,7 +70,7 @@ const checkState = (state: boolean | undefined) => {
 const validationResultMap = {
 	Unvalidated: () => <></>,
 	valid: () => (
-		<div className={cn("valid")}>
+		<div {...cn("valid")}>
 			<Icon.Check />
 		</div>
 	),

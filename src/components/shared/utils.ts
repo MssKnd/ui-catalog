@@ -29,7 +29,11 @@ type Prop = Record<string, PropType>;
 const cn = (defaultClassName = "", props: Prop = {}) => {
 	const defaultClassNames = defaultClassName.split(" ");
 	const classNames = Object.entries(props).flatMap(convertClassName);
-	return Array.from(new Set([...defaultClassNames, ...classNames])).join(" ");
+	return {
+		className: Array.from(new Set([...defaultClassNames, ...classNames])).join(
+			" ",
+		),
+	};
 };
 const convertClassName = ([name, value]: [string, PropType]) => {
 	if (isFalsyExcludingZero(value)) return [];

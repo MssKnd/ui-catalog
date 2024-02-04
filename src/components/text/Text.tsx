@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Text = ({ fontSize = "m", maxWidth, children }: Props) => (
-	<p className={cn("text", { fontSize })} style={{ maxWidth }}>
+	<p {...cn("text", { fontSize })} style={{ maxWidth }}>
 		{children}
 	</p>
 );
