@@ -1,0 +1,56 @@
+@scope (div:has(>div>input[type="checkbox"])) {
+  :scope {
+    display: flex;
+    gap: var(--spacing-3);
+
+    &.vertical {
+      display: grid;
+    }
+
+    div {
+      display: inline-grid;
+      grid-template-columns: [checkbox] min-content [label] auto;
+      gap: var(--spacing-2);
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    cursor: pointer;
+
+    + label {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      inline-size: var(--spacing-4);
+      block-size: var(--spacing-4);
+      border: 1px solid var(--color-natural-3);
+      background-color: var(--color-natural-1);
+      border-radius: var(--border-radius-s);
+    }
+
+    &:checked::before {
+      content: "✔";
+      color: var(--base-white);
+      background-color: var(--color-primary-4);
+      border-color: var(--color-primary-4);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &::before {
+        background-color: var(--color-natural-2);
+        border-color: var(--color-natural-3);
+      }
+
+      + label {
+        cursor: not-allowed;
+        color: var(--color-natural-4);
+      }
+    }
+  }
+}
