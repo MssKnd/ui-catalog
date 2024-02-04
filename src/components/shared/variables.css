@@ -47,9 +47,6 @@
     --base-white: #fff;
     --base-black: #333;
 
-    /* Font */
-    --font-color: var(--base-black);
-
     /* Colors */
     /* Primary Colors */
     --color-primary-1: #f0f7ff;
@@ -83,6 +80,10 @@
     --color-success-5: #32b932;
     --color-success-6: #2ca12c;
 
+    /* Font */
+    --font-color: var(--base-black);
+    --font-color-moderate: var(--color-natural-4);
+
     /* Tooltip background */
     --tooltip-background-color: rgba(0, 0, 0, 0.8);
   }
@@ -92,9 +93,6 @@
   :scope {
     --base-white: #dedede; /* 87% white */
     --base-black: #121212;
-
-    /* Font */
-    --font-color: var(--base-white);
 
     /* Colors */
     /* Primary Colors */
@@ -128,6 +126,10 @@
     --color-success-4: #3cdc3c;
     --color-success-5: #32b932;
     --color-success-6: #2ca12c;
+
+    /* Font */
+    --font-color: var(--base-white);
+    --font-color-moderate: var(--color-natural-4);
 
     /* Tooltip background */
     --tooltip-background-color: rgba(255, 255, 255, 0.2);

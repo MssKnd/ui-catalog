@@ -1,15 +1,18 @@
 @scope (.labeled-form) {
    label {
       align-self: center;
+      vertical-align: middle;
 
       &[for] {
          cursor: pointer;
       }
 
-      &:has(+Input[required], +Select[required], +Textarea[required]) {
+      &:has(+Input:not([required]), +Select:not([required]), +Textarea:not([required])) {
          &::after {
-            content: '*';
-            color: var(--color-error-3);
+            content: '- optional';
+            padding-left: var(--spacing-2);
+            font-size: var(--font-size-xs);
+            color: var(--font-color-moderate);
          }
       }
    }
