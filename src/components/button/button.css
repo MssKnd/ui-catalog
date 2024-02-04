@@ -8,7 +8,7 @@
     line-height: 1;
 
     color: var(--color-natural-6);
-    background-color: transparent;
+    background-color: var(--color-natural-1);
     box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
   }
 
@@ -18,7 +18,7 @@
   }
 
   &[data-priority='primary'] {
-    color: white;
+    color: var(--base-white);
     background-color: var(--color-primary-4);
     &:hover:not(&:disabled), &:focus {
       background-color: var(--color-primary-3);
@@ -33,7 +33,7 @@
   }
 
   &[data-priority='danger'] {
-    color: white;
+    color: var(--base-white);
     background-color: var(--color-error-4);
     &:hover:not(&:disabled), &:focus {
       background-color: var(--color-error-3);
@@ -56,8 +56,8 @@
   }
 }
 
-@scope (button) {
-  :scope[data-priority='normal'] {
+@scope (body.dark button) {
+  &[data-priority='normal'] {
     background-color: var(--color-natural-2);
     &:hover:not(&:disabled), &:focus {
       background-color: var(--color-natural-3);

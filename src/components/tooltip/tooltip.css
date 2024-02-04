@@ -17,7 +17,7 @@
       padding: 4px 8px;
       color: white;
       border-radius: 2px;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: var(--tooltip-background-color);
     }
   }
 }

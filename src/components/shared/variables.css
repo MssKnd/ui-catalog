@@ -82,6 +82,9 @@
     --color-success-4: #3cdc3c;
     --color-success-5: #32b932;
     --color-success-6: #2ca12c;
+
+    /* Tooltip background */
+    --tooltip-background-color: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -125,5 +128,8 @@
     --color-success-4: #3cdc3c;
     --color-success-5: #32b932;
     --color-success-6: #2ca12c;
+
+    /* Tooltip background */
+    --tooltip-background-color: rgba(255, 255, 255, 0.2);
   }
 }
