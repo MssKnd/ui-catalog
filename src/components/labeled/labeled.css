@@ -1,7 +1,7 @@
 @scope (.labeled-form) {
    label {
+      display: flex;
       align-self: center;
-      vertical-align: middle;
 
       &[for] {
          cursor: pointer;
@@ -10,6 +10,7 @@
       &:has(+Input:not([required]), +Select:not([required]), +Textarea:not([required])) {
          &::after {
             content: '- optional';
+            align-self: center;
             padding-left: var(--spacing-2);
             font-size: var(--font-size-xs);
             color: var(--font-color-moderate);
