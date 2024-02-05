@@ -16,7 +16,7 @@ type Props = {
 	placeholder?: string;
 	disabled?: boolean;
 	autoFocus?: boolean;
-	readonly?: boolean;
+	readOnly?: boolean;
 	required?: boolean;
 	pattern?: string;
 	minLength?: number;

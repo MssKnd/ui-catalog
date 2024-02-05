@@ -8,6 +8,10 @@
   &:hover {
     box-shadow: var(--shadow-hover-forms);
   }
+
+  &:disabled, &:read-only {
+    cursor: not-allowed;
+  }
 }
 
 @scope (body.dark input[type='text']) {

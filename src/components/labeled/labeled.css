@@ -16,5 +16,15 @@
             color: var(--font-color-moderate);
          }
       }
+
+      &:has(+Input[readonly], +Select[readonly], +Textarea[readonly]) {
+         &::after {
+            content: '- readonly';
+            align-self: center;
+            padding-left: var(--spacing-2);
+            font-size: var(--font-size-xs);
+            color: var(--font-color-moderate);
+         }
+      }
    }
 }
