@@ -1,6 +1,8 @@
 @scope (div:has(>[role=tooltip])) {
   & {
     position: relative;
+    display: flex;
+
     [role=tooltip][aria-hidden=false] {
       opacity: 1;
       pointer-events: auto;

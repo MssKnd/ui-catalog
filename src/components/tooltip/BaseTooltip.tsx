@@ -78,11 +78,11 @@ const positionCalc = (container: HTMLDivElement, position: Position) => {
 };
 
 const top = (rect: DOMRect, tooltipRect: DOMRect) =>
-	`top: -${tooltipRect.height + MARGIN_PX}px;` +
-	`left: ${rect.width / 2 - tooltipRect.width / 2}px;`;
+	`top: ${tooltipRect.height + MARGIN_PX}px;` +
+	`left: ${Math.round(rect.width / 2 - tooltipRect.width / 2) + MARGIN_PX}px;`;
 
 const right = (rect: DOMRect, tooltipRect: DOMRect) =>
-	`top: ${rect.height / 2 - tooltipRect.height / 2}px;` +
+	`top: ${Math.round(rect.height / 2 - tooltipRect.height / 2)}px;` +
 	`left: ${rect.width + MARGIN_PX}px;`;
 
 const POS = {

@@ -1,5 +1,5 @@
 @scope (input[type='text']) {
-  :scope {
+  & {
     padding: var(--spacing-2);
     border: 1px solid var(--color-natural-3);
     border-radius: var(--border-radius-m);
