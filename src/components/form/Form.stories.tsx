@@ -15,6 +15,31 @@ const meta = {
 	},
 } satisfies Meta<typeof Form>;
 
+const checkboxOptions = [
+	{
+		label: "Apple",
+		value: "apple",
+	},
+	{
+		label: "Lemon",
+		value: "lemon",
+	},
+	{
+		label: "Orange",
+		value: "orange",
+	},
+	{
+		label: "Melon",
+		value: "melon",
+		disabled: true,
+	},
+	{
+		label: "Grape",
+		value: "grape",
+		disabled: true,
+	},
+];
+
 export default meta;
 
 // @ts-expect-error: StoryObj type is not compatible with Story type
@@ -23,8 +48,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	render: (args) => (
 		<Form {...args}>
-			<Labeled.TextField label="label 1" />
-			<Labeled.TextField label="label 2" />
+			<Labeled.TextField label="label 1" required />
+			<Labeled.TextField label="label 2" required />
+			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
 			<Form.Footer>
 				<Button.Submit label="Submit" />
 			</Form.Footer>
@@ -38,8 +64,9 @@ export const Default: Story = {
 export const Horizontal: Story = {
 	render: (args) => (
 		<Form {...args}>
-			<Labeled.TextField label="label 1" />
-			<Labeled.TextField label="label 2" />
+			<Labeled.TextField label="label 1" required />
+			<Labeled.TextField label="label 2" required />
+			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
 			<Form.Footer>
 				<Button.Submit label="Submit" />
 			</Form.Footer>

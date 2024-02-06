@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ChechboxGroup } from "./Checkbox.tsx";
+import { CheckboxGroup } from "./Checkbox.tsx";
 
 const meta = {
-	title: "Components/Forms/ChechboxGroup",
-	component: ChechboxGroup,
+	title: "Components/Forms/CheckboxGroup",
+	component: CheckboxGroup,
 	parameters: {
 		layout: "centered",
 	},
@@ -36,7 +36,7 @@ const meta = {
 			},
 		],
 	},
-} satisfies Meta<typeof ChechboxGroup>;
+} satisfies Meta<typeof CheckboxGroup>;
 
 export default meta;
 

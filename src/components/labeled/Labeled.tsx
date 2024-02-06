@@ -1,6 +1,8 @@
 import { ReactNode, useId } from "react";
 import { TextField, TextFieldProps } from "../text-field/TextField.tsx";
 import "./labeled.css";
+import { Validation } from "../validation/Validation.tsx";
+import { CheckboxGroup, CheckboxGroupProps } from "../checkbox/Checkbox.tsx";
 
 type BaseProps = {
 	label: string;
@@ -23,7 +25,28 @@ const Labeled = ({ label, input }: Props) => {
 };
 
 Labeled.TextField = ({ label, ...props }: BaseProps & TextFieldProps) => (
-	<Labeled label={label} input={(id) => <TextField id={id} {...props} />} />
+	<Labeled
+		label={label}
+		input={(id) => (
+			<Validation input={(ref) => <TextField id={id} ref={ref} {...props} />} />
+		)}
+	/>
 );
+// @ts-expect-error:
+Labeled.TextField.displayName = "Labeled.TextField";
+
+Labeled.CheckboxGroup = ({
+	label,
+	...props
+}: BaseProps & CheckboxGroupProps) => (
+	<Labeled
+		label={label}
+		input={() => (
+			<Validation input={(ref) => <CheckboxGroup ref={ref} {...props} />} />
+		)}
+	/>
+);
+// @ts-expect-error:
+Labeled.CheckboxGroup.displayName = "Labeled.CheckboxGroup";
 
 export { Labeled };
