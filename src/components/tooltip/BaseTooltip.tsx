@@ -69,26 +69,29 @@ const BaseTooltip: BaseTooltip = forwardRef(
 
 const MARGIN_PX = 10;
 
-const positionCalc = (container: HTMLDivElement, position: Position) => {
-	const rect = container.getBoundingClientRect();
-	const tooltip = container.lastElementChild;
-	if (!rect || !tooltip) return;
-	const tooltipRect = tooltip.getBoundingClientRect();
-	tooltip.setAttribute("style", POS[position](rect, tooltipRect));
-};
-
 const top = (rect: DOMRect, tooltipRect: DOMRect) =>
-	`top: ${tooltipRect.height + MARGIN_PX}px;` +
-	`left: ${Math.round(rect.width / 2 - tooltipRect.width / 2) + MARGIN_PX}px;`;
+	`top: -${Math.round(tooltipRect.height) + MARGIN_PX}px;` +
+	`left: ${Math.round(rect.width / 2 - tooltipRect.width / 2)}px;`;
 
 const right = (rect: DOMRect, tooltipRect: DOMRect) =>
 	`top: ${Math.round(rect.height / 2 - tooltipRect.height / 2)}px;` +
-	`left: ${rect.width + MARGIN_PX}px;`;
+	`left: ${Math.round(rect.width) + MARGIN_PX}px;`;
 
 const POS = {
 	top,
 	right,
 } as const;
+
+const positionCalc = (container: HTMLDivElement, position: Position) => {
+	const target = container.firstChild; // target is possibly a text node not an element
+	const tooltip = container.lastElementChild;
+	if (!tooltip || !target) return;
+	const range = document.createRange();
+	range.selectNode(target);
+	const targetRect = range.getBoundingClientRect();
+	const tooltipRect = tooltip.getBoundingClientRect();
+	tooltip.setAttribute("style", POS[position](targetRect, tooltipRect));
+};
 
 export type { Position, Props as TooltipProps };
 export { BaseTooltip, positionCalc };
