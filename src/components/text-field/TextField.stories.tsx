@@ -14,6 +14,7 @@ const meta = {
 	argTypes: {
 		onBlur: { control: false },
 		onChange: { control: false },
+		ref: { control: false },
 	},
 } satisfies Meta<Props>;
 

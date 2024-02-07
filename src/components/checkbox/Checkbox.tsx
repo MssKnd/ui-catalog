@@ -21,6 +21,7 @@ type CheckboxProps = {
 type Option = Omit<CheckboxProps, "name" | "defaultChecked">;
 
 type Props = {
+	/** If there are more than 3 - 5 choices, use the select box */
 	options: Option[];
 	name?: string;
 	vertical?: boolean;
