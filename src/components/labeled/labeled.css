@@ -7,24 +7,25 @@
          cursor: pointer;
       }
 
-      &:has(+Input:not([required]), +Select:not([required]), +Textarea:not([required])) {
-         &::after {
-            content: '- optional';
-            align-self: center;
-            padding-left: var(--spacing-2);
-            font-size: var(--font-size-xs);
-            color: var(--font-color-moderate);
-         }
-      }
+   }
 
-      &:has(+Input[readonly], +Select[readonly], +Textarea[readonly]) {
-         &::after {
-            content: '- readonly';
-            align-self: center;
-            padding-left: var(--spacing-2);
-            font-size: var(--font-size-xs);
-            color: var(--font-color-moderate);
-         }
+   &:has(input:not([required], [type=checkbox]), select:not([required]), textarea:not([required])) {
+      label::after {
+         content: '- optional';
+         align-self: center;
+         padding-left: var(--spacing-2);
+         font-size: var(--font-size-xs);
+         color: var(--font-color-moderate);
+      }
+   }
+
+   &:has(input[readonly], select[readonly], textarea[readonly]) {
+      label::after {
+         content: '- readonly';
+         align-self: center;
+         padding-left: var(--spacing-2);
+         font-size: var(--font-size-xs);
+         color: var(--font-color-moderate);
       }
    }
 }
