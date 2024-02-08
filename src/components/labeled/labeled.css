@@ -2,6 +2,7 @@
    label {
       display: flex;
       align-self: center;
+      width: max-content;
 
       &[for] {
          cursor: pointer;

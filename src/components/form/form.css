@@ -20,11 +20,17 @@
   }
 
   &[data-horizontal='true'] {
+    grid-template-columns: [label] max-content [input] 1fr;
+    gap: var(--16px) var(--12px);
 
     > div {
       display: grid;
-      grid-template-columns: [label] max-content [input] 1fr;
-      gap: var(--8px);
+      grid-template-columns: subgrid;
+      grid-column: span 2;
+    }
+
+    footer {
+      grid-column: span 2;
     }
   }
 
