@@ -5,6 +5,7 @@ import {
 	forwardRef,
 	ForwardRefExoticComponent,
 	RefAttributes,
+	memo,
 } from "react";
 import "./tooltip.css";
 
@@ -29,42 +30,44 @@ type BaseTooltip = ForwardRefExoticComponent<
 >;
 
 /** Tooltip */
-const BaseTooltip: BaseTooltip = forwardRef(
-	(
-		{
-			children,
-			content,
-			position = "top",
-			isVisible,
-			showTooltip,
-			hideTooltip,
-		},
-		ref,
-	) => {
-		const id = useId();
-		const isTextNode = typeof content === "string";
+const BaseTooltip: BaseTooltip = memo(
+	forwardRef(
+		(
+			{
+				children,
+				content,
+				position = "top",
+				isVisible,
+				showTooltip,
+				hideTooltip,
+			},
+			ref,
+		) => {
+			const id = useId();
+			const isTextNode = typeof content === "string";
 
-		return (
-			<div
-				ref={ref}
-				onMouseEnter={showTooltip?.(position)}
-				onMouseLeave={hideTooltip}
-				onFocus={showTooltip?.(position)}
-				onBlur={hideTooltip}
-				aria-describedby={id}
-			>
-				{children}
+			return (
 				<div
-					id={id}
-					role="tooltip"
-					aria-hidden={!isVisible}
-					data-is-text={isTextNode}
+					ref={ref}
+					onMouseEnter={showTooltip?.(position)}
+					onMouseLeave={hideTooltip}
+					onFocus={showTooltip?.(position)}
+					onBlur={hideTooltip}
+					aria-describedby={id}
 				>
-					{content}
+					{children}
+					<div
+						id={id}
+						role="tooltip"
+						aria-hidden={!isVisible}
+						data-is-text={isTextNode}
+					>
+						{content}
+					</div>
 				</div>
-			</div>
-		);
-	},
+			);
+		},
+	),
 );
 
 const MARGIN_PX = 10;
@@ -93,5 +96,5 @@ const positionCalc = (container: HTMLDivElement, position: Position) => {
 	tooltip.setAttribute("style", POS[position](targetRect, tooltipRect));
 };
 
-export type { Position, Props as TooltipProps };
+export type { Position, Props as BaseTooltipProps };
 export { BaseTooltip, positionCalc };

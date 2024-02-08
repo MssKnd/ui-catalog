@@ -15,10 +15,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-	render: (args) => <Validation {...args} />,
+	render: ({ children }) => <Validation>{children}</Validation>,
 	args: {
-		input: (ref) => (
-			<TextField ref={ref} required minLength={3} maxLength={5} />
-		),
+		children: <TextField required minLength={3} maxLength={5} />,
 	},
 };

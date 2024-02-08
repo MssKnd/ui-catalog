@@ -4,14 +4,14 @@ import {
 	BaseTooltip,
 	Position,
 	positionCalc,
-	TooltipProps,
+	BaseTooltipProps,
 } from "./BaseTooltip.tsx";
 
 const InteractiveTooltip = ({
 	children,
 	content,
 	position = "top",
-}: TooltipProps) => {
+}: BaseTooltipProps) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const showTooltip =
 		(position: Position) => (event: BaseSyntheticEvent<{}, HTMLDivElement>) => {

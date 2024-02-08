@@ -28,7 +28,9 @@ Labeled.TextField = ({ label, ...props }: BaseProps & TextFieldProps) => (
 	<Labeled
 		label={label}
 		input={(id) => (
-			<Validation input={(ref) => <TextField id={id} ref={ref} {...props} />} />
+			<Validation>
+				<TextField id={id} {...props} />
+			</Validation>
 		)}
 	/>
 );
@@ -42,7 +44,9 @@ Labeled.CheckboxGroup = ({
 	<Labeled
 		label={label}
 		input={() => (
-			<Validation input={(ref) => <CheckboxGroup ref={ref} {...props} />} />
+			<Validation>
+				<CheckboxGroup {...props} />
+			</Validation>
 		)}
 	/>
 );

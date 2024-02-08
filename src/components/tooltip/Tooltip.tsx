@@ -1,29 +1,45 @@
-import { useRef, useEffect } from "react";
+import {
+	useRef,
+	useEffect,
+	ForwardRefExoticComponent,
+	RefAttributes,
+	forwardRef,
+	useImperativeHandle,
+	memo,
+} from "react";
 import { isEmpty } from "../shared/utils.ts";
-import { BaseTooltip, positionCalc, TooltipProps } from "./BaseTooltip.tsx";
+import { BaseTooltip, positionCalc, BaseTooltipProps } from "./BaseTooltip.tsx";
 import "./tooltip.css";
 
-const Tooltip = ({ children, content, position = "top" }: TooltipProps) => {
-	const ref = useRef<HTMLDivElement>(null);
-	const isVisible =
-		!!content && !(typeof content === "object" && isEmpty(content));
+type Props = ForwardRefExoticComponent<
+	BaseTooltipProps & RefAttributes<HTMLDivElement>
+>;
 
-	useEffect(() => {
-		const container = ref.current;
-		if (!container) return;
-		positionCalc(container, position);
-	}, [ref, position, content, children]);
+const Tooltip: Props = memo(
+	forwardRef(({ children, content, position = "top" }, ref) => {
+		const containerRef = useRef<HTMLDivElement>(null);
+		const isVisible =
+			!!content && !(typeof content === "object" && isEmpty(content));
 
-	return (
-		<BaseTooltip
-			ref={ref}
-			isVisible={isVisible}
-			content={content}
-			position={position}
-		>
-			{children}
-		</BaseTooltip>
-	);
-};
+		useImperativeHandle(ref, () => containerRef.current!, [containerRef]);
+
+		useEffect(() => {
+			const container = containerRef.current;
+			if (!container) return;
+			positionCalc(container, position);
+		}, [containerRef, position, content, children]);
+
+		return (
+			<BaseTooltip
+				ref={containerRef}
+				isVisible={isVisible}
+				content={content}
+				position={position}
+			>
+				{children}
+			</BaseTooltip>
+		);
+	}),
+);
 
 export { Tooltip };

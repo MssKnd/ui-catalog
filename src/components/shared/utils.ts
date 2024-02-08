@@ -41,6 +41,19 @@ const convertClassName = ([name, value]: [string, PropType]) => {
 	return [`${camel2KebabCase(name)}_${value}`];
 };
 
+interface ValidatableHTMLElement extends HTMLElement {
+	validity: ValidityState;
+	validationMessage: string;
+	checkValidity(): boolean;
+	reportValidity(): boolean;
+}
+
+const isValidatableHTMLElement = (
+	element: Element,
+): element is ValidatableHTMLElement =>
+	["INPUT", "SELECT", "TEXTAREA"].includes(element.nodeName);
+
+export type { ValidatableHTMLElement };
 export {
 	isEmpty,
 	isTrue,
@@ -48,4 +61,5 @@ export {
 	isFalsyExcludingZero,
 	camel2KebabCase,
 	cn,
+	isValidatableHTMLElement,
 };
