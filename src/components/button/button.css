@@ -11,11 +11,8 @@
 
     color: var(--color-natural-6);
     background-color: var(--color-natural-1);
-    box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
 
-    transition:
-      background-color var(--transition-duration-base)
-      box-shadow var(--transition-duration-base);
+    transition: box-shadow var(--transition-duration-quick);
 
     /*  ripple effect */
     position: relative;
@@ -50,17 +47,16 @@
     color: var(--base-white);
     background-color: var(--color-primary-4);
     &:hover:not(&:disabled), &:focus {
-      background-color: var(--color-primary-3);
-    }
-    &:hover:not(&:disabled) {
       box-shadow: var(--shadow-hover-forms);
+      outline: none;
     }
   }
 
   &[data-priority='normal'] {
     background-color: var(--color-natural-1);
     &:hover:not(&:disabled), &:focus {
-      background-color: var(--color-natural-2);
+      box-shadow: var(--shadow-hover-forms);
+      outline: none;
     }
   }
 
@@ -68,10 +64,8 @@
     color: var(--base-white);
     background-color: var(--color-error-4);
     &:hover:not(&:disabled), &:focus {
-      background-color: var(--color-error-3);
-    }
-    &:hover:not(&:disabled) {
       box-shadow: var(--shadow-hover-forms-error);
+      outline: none;
     }
   }
 

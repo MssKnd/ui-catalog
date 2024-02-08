@@ -49,7 +49,7 @@ export const Default: Story = {
 	render: (args) => (
 		<Form {...args}>
 			<Labeled.TextField label="label 1" required />
-			<Labeled.TextField label="label 2" required />
+			<Labeled.TextField label="label 2" />
 			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
 			<Form.Footer>
 				<Button.Submit label="Submit" />
@@ -65,7 +65,7 @@ export const Horizontal: Story = {
 	render: (args) => (
 		<Form {...args}>
 			<Labeled.TextField label="label 1" required />
-			<Labeled.TextField label="label 2" required />
+			<Labeled.TextField label="label 2" />
 			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
 			<Form.Footer>
 				<Button.Submit label="Submit" />
