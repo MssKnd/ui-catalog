@@ -5,7 +5,7 @@
   }
 
   &:not([data-horizontal='true']) {
-    grid-template-rows: repeat(2, [label] max-content [input] 1fr);
+    grid-template-rows: [label] max-content [input] 1fr;
 
     > div {
       display: grid;
