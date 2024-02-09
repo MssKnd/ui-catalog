@@ -13,6 +13,11 @@ const meta = {
 	args: {
 		onSubmit: (event) => event.preventDefault(),
 	},
+	argTypes: {
+		onSubmit: {
+			control: false,
+		},
+	},
 } satisfies Meta<typeof Form>;
 
 const checkboxOptions = [

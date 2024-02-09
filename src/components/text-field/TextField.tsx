@@ -30,10 +30,9 @@ type TextField = ForwardRefExoticComponent<
 
 /** Text field */
 const TextField: TextField = memo(
-	forwardRef(({ value = "", ...props }, ref) => {
-		console.log("test");
-		return <input ref={ref} type="text" {...props} defaultValue={value} />;
-	}),
+	forwardRef(({ value = "", ...props }, ref) => (
+		<input ref={ref} type="text" {...props} defaultValue={value} />
+	)),
 );
 
 export type { Props as TextFieldProps };

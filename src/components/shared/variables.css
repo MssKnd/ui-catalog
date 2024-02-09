@@ -38,7 +38,9 @@
   --border-radius-m: var(--4px);
 
   /* Shadows */
-  --shadow-hover-forms: 0 0 0 var(--2px) var(--color-primary-3);
+  --shadow-forms: 0 0 0 var(--2px) var(--color-natural-3);
+  --shadow-hover-forms: 0 0 0 var(--2px) var(--color-natural-4);
+  --shadow-hover-forms-primary: 0 0 0 var(--2px) var(--color-primary-3);
   --shadow-hover-forms-error: 0 0 0 var(--2px) var(--color-error-3);
 
   /* Transition */
@@ -105,8 +107,8 @@
   --color-primary-6: #0c2a7a;
 
   /* Natural Colors */
-  --color-natural-1: var(--base-white);
-  --color-natural-2: #b3b3b3;
+  --color-natural-1: #e3e3e3;
+  --color-natural-2: var(--base-white);
   --color-natural-3: #999999; /* 60% white */
   --color-natural-4: #757575;
   --color-natural-5: #616161; /* 38% white */
@@ -134,4 +136,8 @@
 
   /* Tooltip background */
   --tooltip-background-color: rgba(255, 255, 255, 0.2);
+
+  /* Shadows */
+  --shadow-forms: 0 0 0 var(--2px) var(--color-natural-5);
+  --shadow-hover-forms: 0 0 0 var(--2px) var(--color-natural-2);
 }
