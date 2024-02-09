@@ -1,0 +1,44 @@
+{
+  "name": "ui-catalog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "biome lint -- apply ./src",
+    "format": "biome format ./src --write",
+    "check": "biome check --apply ./src",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "5.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.2",
+    "@storybook/addon-docs": "7.6.10",
+    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addon-interactions": "7.6.10",
+    "@storybook/addon-links": "7.6.10",
+    "@storybook/addon-onboarding": "1.0.10",
+    "@storybook/blocks": "7.6.10",
+    "@storybook/react": "7.6.10",
+    "@storybook/react-vite": "7.6.10",
+    "@storybook/test": "7.6.10",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "@typescript-eslint/eslint-plugin": "6.19.0",
+    "@typescript-eslint/parser": "6.19.0",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "storybook": "7.6.10",
+    "storybook-addon-themes": "^6.1.0",
+    "typescript": "5.3.3",
+    "vite": "5.0.11",
+    "vitest": "1.2.2"
+  }
+}

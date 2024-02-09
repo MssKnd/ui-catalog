@@ -1,0 +1,90 @@
+@scope (button) {
+  & {
+    font-weight: var(--font-bold);
+    border: 0;
+    border-radius: var(--border-radius-m);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1;
+
+    user-select: none;
+
+    color: var(--color-natural-6);
+    background-color: var(--color-natural-1);
+
+    transition: box-shadow var(--transition-duration-quick);
+
+    /*  ripple effect */
+    position: relative;
+    overflow: hidden; /* hide overflow ripple */
+
+    &:not(:disabled)::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle, #fff 10%, transparent 10%) no-repeat 50%;
+      transform: scale(10, 10);
+      opacity: 0;
+      transition: transform var(--transition-duration-base), opacity 1s;
+    }
+    &[data-priority='normal']:not(:disabled)::after {
+      background: radial-gradient(circle, #aaa 10%, transparent 10%) no-repeat 50%;
+    }
+
+    &:active::after {
+      transform: scale(0, 0);
+      transition: 0s;
+      opacity: 0.3;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &[data-priority='primary'] {
+    color: var(--base-white);
+    background-color: var(--color-primary-4);
+    &:hover:not(&:disabled), &:focus {
+      box-shadow: var(--shadow-hover-forms-primary);
+      outline: none;
+    }
+  }
+
+  &[data-priority='normal'] {
+    box-shadow: var(--shadow-forms);
+    background-color: var(--color-natural-1);
+    &:hover:not(&:disabled), &:focus {
+      box-shadow: var(--shadow-hover-forms);
+      outline: none;
+    }
+  }
+
+  &[data-priority='danger'] {
+    color: var(--base-white);
+    background-color: var(--color-error-4);
+    &:hover:not(&:disabled), &:focus {
+      box-shadow: var(--shadow-hover-forms-error);
+      outline: none;
+    }
+  }
+
+  &[data-size='s'] {
+    font-size: var(--12px);
+    padding: var(--4px) var(--12px);
+  }
+
+  &[data-size='m'] {
+    font-size: var(--16px);
+    padding: var(--8px) var(--16px);
+  }
+
+  &[data-size='l'] {
+    font-size: var(--24px);
+    padding: var(--12px) var(--24px);
+  }
+}

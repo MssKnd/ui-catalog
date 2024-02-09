@@ -1,0 +1,62 @@
+@scope (div:has(>div>input[type="checkbox"])) {
+  & {
+    display: flex;
+    gap: var(--spacing-4);
+
+    &.vertical {
+      display: grid;
+    }
+
+    div {
+      display: inline-grid;
+      grid-template-columns: [checkbox] min-content [label] auto;
+      gap: var(--spacing-2);
+      align-items: center;
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    cursor: pointer;
+    margin: 0;
+    width: var(--font-size-s);
+    height: var(--font-size-s);
+
+    + label {
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      inline-size: var(--font-size-xs);
+      block-size: var(--font-size-xs);
+      font-size: var(--font-size-xs);
+      text-align: center;
+      border: 1px solid var(--color-natural-3);
+      background-color: var(--color-natural-1);
+      border-radius: var(--border-radius-s);
+    }
+
+    &:checked::before {
+      content: "✔";
+      color: var(--base-white);
+      background-color: var(--color-primary-4);
+      border-color: var(--color-primary-4);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &::before {
+        background-color: var(--color-natural-2);
+        border-color: var(--color-natural-3);
+      }
+
+      + label {
+        cursor: not-allowed;
+        color: var(--color-natural-4);
+      }
+    }
+  }
+}

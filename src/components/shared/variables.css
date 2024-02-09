@@ -1,0 +1,143 @@
+:root {
+  /* Base unit */
+  --2px: 0.125rem;
+  --4px: 0.25rem;
+  --8px: 0.5rem;
+  --12px: 0.75rem;
+  --14px: 0.875rem;
+  --16px: 1rem;
+  --18px: 1.125rem;
+  --20px: 1.25rem;
+  --24px: 1.5rem;
+  --32px: 2rem;
+  --48px: 3rem;
+  --64px: 4rem;
+
+  /* Font */
+  --font-bold: 700;
+
+  --font-size-xs: var(--12px);
+  --font-size-s: var(--14px);
+  --font-size-m: var(--16px);
+  --font-size-l: var(--18px);
+  --font-size-xl: var(--20px);
+
+  /* Spacing */
+  --spacing-1: var(--2px);
+  --spacing-2: var(--4px);
+  --spacing-3: var(--8px);
+  --spacing-4: var(--12px);
+  --spacing-5: var(--16px);
+  --spacing-6: var(--24px);
+  --spacing-7: var(--32px);
+  --spacing-8: var(--48px);
+  --spacing-9: var(--64px);
+
+  /* Border radius */
+  --border-radius-s: var(--2px);
+  --border-radius-m: var(--4px);
+
+  /* Shadows */
+  --shadow-forms: 0 0 0 var(--2px) var(--color-natural-3);
+  --shadow-hover-forms: 0 0 0 var(--2px) var(--color-natural-4);
+  --shadow-hover-forms-primary: 0 0 0 var(--2px) var(--color-primary-3);
+  --shadow-hover-forms-error: 0 0 0 var(--2px) var(--color-error-3);
+
+  /* Transition */
+  --transition-duration-quick: 0.1s;
+  --transition-duration-base: 0.3s;
+}
+
+:root:has(body.light) {
+  --base-white: #fff;
+  --base-black: #333;
+
+  /* Colors */
+  /* Primary Colors */
+  --color-primary-1: #f0f7ff;
+  --color-primary-2: #cadefa;
+  --color-primary-3: #4673d4;
+  --color-primary-4: #2352c8;
+  --color-primary-5: #1337a1;
+  --color-primary-6: #0c2a7a;
+
+  /* Natural Colors */
+  --color-natural-1: var(--base-white);
+  --color-natural-2: #f5f5f5;
+  --color-natural-3: #cccccc;
+  --color-natural-4: #8c8c8c;
+  --color-natural-5: #666666;
+  --color-natural-6: var(--base-black);
+
+  /* Error Colors */
+  --color-error-1: #ffebe6;
+  --color-error-2: #ffc3be;
+  --color-error-3: #dc5a5a;
+  --color-error-4: #dc3c37;
+  --color-error-5: #b93232;
+  --color-error-6: #a12c2c;
+
+  /* Success Colors */
+  --color-success-1: #e6f4e6;
+  --color-success-2: #c3e3c3;
+  --color-success-3: #5adc5a;
+  --color-success-4: #3cdc3c;
+  --color-success-5: #32b932;
+  --color-success-6: #2ca12c;
+
+  /* Font */
+  --font-color: var(--base-black);
+  --font-color-moderate: var(--color-natural-4);
+
+  /* Tooltip background */
+  --tooltip-background-color: rgba(0, 0, 0, 0.8);
+}
+
+:root:has(body.dark) {
+  --base-white: #dedede; /* 87% white */
+  --base-black: #121212;
+
+  /* Colors */
+  /* Primary Colors */
+  --color-primary-1: #f0f7ff;
+  --color-primary-2: #cadefa;
+  --color-primary-3: #4673d4;
+  --color-primary-4: #2352c8;
+  --color-primary-5: #1337a1;
+  --color-primary-6: #0c2a7a;
+
+  /* Natural Colors */
+  --color-natural-1: #e3e3e3;
+  --color-natural-2: var(--base-white);
+  --color-natural-3: #999999; /* 60% white */
+  --color-natural-4: #757575;
+  --color-natural-5: #616161; /* 38% white */
+  --color-natural-6: var(--base-black);
+
+  /* Error Colors */
+  --color-error-1: #ffebe6;
+  --color-error-2: #ffc3be;
+  --color-error-3: #b93232;
+  --color-error-4: #dc3c37;
+  --color-error-5: #b93232;
+  --color-error-6: #a12c2c;
+
+  /* Success Colors */
+  --color-success-1: #e6f4e6;
+  --color-success-2: #c3e3c3;
+  --color-success-3: #5adc5a;
+  --color-success-4: #3cdc3c;
+  --color-success-5: #32b932;
+  --color-success-6: #2ca12c;
+
+  /* Font */
+  --font-color: var(--base-white);
+  --font-color-moderate: var(--color-natural-4);
+
+  /* Tooltip background */
+  --tooltip-background-color: rgba(255, 255, 255, 0.2);
+
+  /* Shadows */
+  --shadow-forms: 0 0 0 var(--2px) var(--color-natural-5);
+  --shadow-hover-forms: 0 0 0 var(--2px) var(--color-natural-2);
+}
