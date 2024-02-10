@@ -1,0 +1,23 @@
+@scope (input[type='search']) {
+  & {
+    padding: var(--spacing-2);
+    border: 1px solid var(--color-natural-3);
+    border-radius: var(--border-radius-m);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-hover-forms);
+  }
+
+  &:disabled, &:read-only {
+    cursor: not-allowed;
+  }
+}
+
+@scope (body.dark input[type='text']) {
+  :scope {
+    background-color: var(--color-natural-5);
+    border: 1px solid var(--color-natural-4);
+    color: var(--font-color);
+  }
+}
