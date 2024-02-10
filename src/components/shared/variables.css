@@ -1,5 +1,6 @@
 :root {
   /* Base unit */
+  --1px: 0.0625rem;
   --2px: 0.125rem;
   --4px: 0.25rem;
   --8px: 0.5rem;
@@ -32,6 +33,10 @@
   --spacing-7: var(--32px);
   --spacing-8: var(--48px);
   --spacing-9: var(--64px);
+
+  /* Border */
+  /* Border width */
+  --border-width: var(--1px);
 
   /* Border radius */
   --border-radius-s: var(--2px);

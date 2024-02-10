@@ -1,7 +1,7 @@
 @scope (input[type='text']) {
   & {
     padding: var(--spacing-2);
-    border: 1px solid var(--color-natural-3);
+    border: var(--border-width) solid var(--color-natural-3);
     border-radius: var(--border-radius-m);
   }
 
@@ -17,7 +17,7 @@
 @scope (body.dark input[type='text']) {
   :scope {
     background-color: var(--color-natural-5);
-    border: 1px solid var(--color-natural-4);
+    border: var(--border-width) solid var(--color-natural-4);
     color: var(--font-color);
   }
 }
