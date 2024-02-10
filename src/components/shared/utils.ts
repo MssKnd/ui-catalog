@@ -41,6 +41,9 @@ const convertClassName = ([name, value]: [string, PropType]) => {
 	return [`${camel2KebabCase(name)}_${value}`];
 };
 
+const isHTMLElement = (element: Element | null): element is HTMLElement =>
+	element instanceof HTMLElement;
+
 interface ValidatableHTMLElement extends HTMLElement {
 	validity: ValidityState;
 	validationMessage: string;
@@ -62,4 +65,5 @@ export {
 	camel2KebabCase,
 	cn,
 	isValidatableHTMLElement,
+	isHTMLElement,
 };

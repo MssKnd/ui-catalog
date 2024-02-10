@@ -55,7 +55,11 @@ export const Default: Story = {
 		<Form {...args}>
 			<Labeled.TextField label="label 1" required />
 			<Labeled.TextField label="label 2" />
-			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
+			<Labeled.CheckboxGroup
+				label="label 3"
+				name="checkbox"
+				options={checkboxOptions}
+			/>
 			<Form.Footer>
 				<Button.Submit label="Submit" />
 			</Form.Footer>
@@ -71,7 +75,11 @@ export const Horizontal: Story = {
 		<Form {...args}>
 			<Labeled.TextField label="label 1" required />
 			<Labeled.TextField label="label 2" />
-			<Labeled.CheckboxGroup label="label 3" options={checkboxOptions} />
+			<Labeled.CheckboxGroup
+				label="label 3"
+				name="checkbox_horizontal"
+				options={checkboxOptions}
+			/>
 			<Form.Footer>
 				<Button.Submit label="Submit" />
 			</Form.Footer>

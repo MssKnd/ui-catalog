@@ -6,9 +6,10 @@ import {
 	Ref,
 	RefAttributes,
 	useId,
+	MouseEventHandler,
 } from "react";
 import "./checkbox.css";
-import { cn } from "../shared/utils.ts";
+import { cn, isHTMLElement } from "../shared/utils.ts";
 
 type CheckboxProps = {
 	name?: string;
@@ -61,8 +62,15 @@ type Checkbox = ForwardRefExoticComponent<
 const Checkbox: Checkbox = forwardRef(
 	({ label, ...props }: CheckboxProps, ref) => {
 		const id = useId();
+
+		const onClick: MouseEventHandler<HTMLDivElement> = (e) => {
+			if (!isHTMLElement(e.currentTarget.firstElementChild)) return;
+			e.currentTarget.firstElementChild?.click();
+			e.stopPropagation();
+		};
+
 		return (
-			<div>
+			<div onClick={onClick}>
 				<input ref={ref} type="checkbox" id={id} {...props} />
 				<label htmlFor={id}>{label}</label>
 			</div>
