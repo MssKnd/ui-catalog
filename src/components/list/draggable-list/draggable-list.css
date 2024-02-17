@@ -1,0 +1,32 @@
+@scope (ul.draggable-list) {
+  & {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+
+  .drop-zone {
+    position: absolute;
+    width: 100%;
+    height: var(--4px);
+    border-radius: var(--border-radius-s);
+
+    &.drag-over {
+      background-color: var(--color-primary-2);
+    }
+  }
+
+  li {
+    position: relative;
+
+    .drop-zone {
+      top: calc(var(--2px) * -1);
+    }
+  }
+
+  & > .drop-zone {
+    /*bottom: calc(var(--2px) * -1);*/
+  }
+}
