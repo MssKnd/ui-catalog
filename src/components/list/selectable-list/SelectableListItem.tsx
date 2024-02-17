@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 type Props = {
 	id: string;
 	name: string;
@@ -5,19 +7,22 @@ type Props = {
 	selected: boolean;
 };
 
-const SelectableListItem = ({ id, label, selected, name }: Props) => {
-	return (
-		<li>
-			<input
-				id={id}
-				name={name}
-				type="checkbox"
-				value={id}
-				defaultChecked={selected}
-			/>
-			<label htmlFor={id}>{label}</label>
-		</li>
-	);
-};
+const SelectableListItem = forwardRef<HTMLInputElement, Props>(
+	({ id, label, selected, name }, ref) => {
+		return (
+			<li>
+				<input
+					ref={ref}
+					id={id}
+					name={name}
+					type="checkbox"
+					value={id}
+					defaultChecked={selected}
+				/>
+				<label htmlFor={id}>{label}</label>
+			</li>
+		);
+	},
+);
 
 export { SelectableListItem };

@@ -10,18 +10,24 @@ type Props = {
 	}[];
 };
 
-const SelectableList = ({ name, items }: Props) => (
-	<BaseList>
-		{items.map(({ value, label, selected = false }) => (
-			<SelectableListItem
-				key={value}
-				id={value}
-				name={name}
-				label={label}
-				selected={selected}
-			/>
-		))}
-	</BaseList>
-);
+const SelectableList = ({ name, items }: Props) => {
+	if (!items.length) {
+		return <>empty state</>;
+	}
+
+	return (
+		<BaseList>
+			{items.map(({ value, label, selected = false }) => (
+				<SelectableListItem
+					key={value}
+					id={value}
+					name={name}
+					label={label}
+					selected={selected}
+				/>
+			))}
+		</BaseList>
+	);
+};
 
 export { SelectableList };
